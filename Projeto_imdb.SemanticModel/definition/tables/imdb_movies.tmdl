@@ -1,0 +1,294 @@
+table imdb_movies
+	lineageTag: 5a9dbe02-92a3-4b0e-8bb5-59abb58d2f3c
+
+	measure 'Total de Filmes' = COUNTROWS(imdb_movies)
+		formatString: 0.0
+		lineageTag: b00d4c82-2d77-4802-a861-7d3b4aebcee2
+
+		changedProperty = IsHidden
+
+	measure 'Média IMDB Pós 2000' =
+			
+			CALCULATE(
+			    AVERAGE('imdb_movies'[rating_imdb]),
+			    'imdb_movies'[ano]>= 2000
+			)
+		lineageTag: 568b2b7f-e097-4a1b-9d05-803a6ec11601
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Resultado Financeiro Total' =
+			
+			SUMX(
+			    'imdb_movies',
+			    'imdb_movies'[gross_world_wide] - 'imdb_movies'[budget]
+			)
+		formatString: 0
+		lineageTag: 0fb5b05b-c861-45c9-9632-1bf853dec296
+
+	column id
+		dataType: string
+		lineageTag: 9aa86d1d-ad1a-42c0-9c86-65220dc78387
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column titulo
+		dataType: string
+		lineageTag: 505bde4e-8a73-4422-a3cf-60ecaf25956e
+		summarizeBy: none
+		sourceColumn: titulo
+
+		annotation SummarizationSetBy = Automatic
+
+	column ano
+		dataType: int64
+		formatString: 0
+		lineageTag: 77a66701-9af6-4eb5-999d-aec693c3440e
+		summarizeBy: sum
+		sourceColumn: ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating_mpa
+		dataType: string
+		lineageTag: 8c22e9c3-4f5f-48e6-9d15-e844df8ad1ba
+		summarizeBy: none
+		sourceColumn: rating_mpa
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating_imdb
+		dataType: int64
+		formatString: 0
+		lineageTag: a4d29a53-5ff5-4599-8263-5938bae2702b
+		summarizeBy: sum
+		sourceColumn: rating_imdb
+
+		annotation SummarizationSetBy = Automatic
+
+	column vote
+		dataType: int64
+		formatString: 0
+		lineageTag: d2a41b4f-114d-479a-b546-4289a2b739bb
+		summarizeBy: sum
+		sourceColumn: vote
+
+		annotation SummarizationSetBy = Automatic
+
+	column budget
+		dataType: int64
+		formatString: 0
+		lineageTag: a73b98ce-19f6-4325-97bd-66a3f8f75caf
+		summarizeBy: sum
+		sourceColumn: budget
+
+		annotation SummarizationSetBy = Automatic
+
+	column gross_world_wide
+		dataType: decimal
+		formatString: 0
+		lineageTag: 55896d47-85a1-4a94-a837-d8a5fe5ee506
+		summarizeBy: sum
+		sourceColumn: gross_world_wide
+
+		annotation SummarizationSetBy = Automatic
+
+	column gross_us_canada
+		dataType: decimal
+		formatString: "R$"#,0.###############;-"R$"#,0.###############;"R$"#,0.###############
+		lineageTag: 05068177-8d3e-493d-a502-6a17e0d6cef3
+		summarizeBy: sum
+		sourceColumn: gross_us_canada
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column gross_opening_weekend
+		dataType: decimal
+		formatString: 0
+		lineageTag: b3c9b28e-badf-40bb-9c8b-79b5690b161c
+		summarizeBy: sum
+		sourceColumn: gross_opening_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column diretor
+		dataType: string
+		lineageTag: b1949894-6b12-4142-bf30-e0b0c26535c8
+		summarizeBy: none
+		sourceColumn: diretor
+
+		annotation SummarizationSetBy = Automatic
+
+	column writer
+		dataType: string
+		lineageTag: 370b1945-6eb6-47ae-ad6c-486f4d18afdc
+		summarizeBy: none
+		sourceColumn: writer
+
+		annotation SummarizationSetBy = Automatic
+
+	column star
+		dataType: string
+		lineageTag: 137d8928-f9f6-498e-86f5-1634b1d8ad27
+		summarizeBy: none
+		sourceColumn: star
+
+		annotation SummarizationSetBy = Automatic
+
+	column genero
+		dataType: string
+		lineageTag: 4dbc5646-b4d5-431d-82b1-1da005c8c940
+		summarizeBy: none
+		sourceColumn: genero
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_origin
+		dataType: string
+		lineageTag: e07ef065-01e2-42da-a473-dd9ad7289ea6
+		summarizeBy: none
+		sourceColumn: country_origin
+
+		annotation SummarizationSetBy = Automatic
+
+	column filming_location
+		dataType: string
+		lineageTag: 1f871540-fb9a-4933-8255-6ca9fa4e56b9
+		summarizeBy: none
+		sourceColumn: filming_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column production_company
+		dataType: string
+		lineageTag: 4cf8d209-1937-4a3f-a7eb-c35a7f0f2016
+		summarizeBy: none
+		sourceColumn: production_company
+
+		annotation SummarizationSetBy = Automatic
+
+	column linguagem
+		dataType: string
+		lineageTag: 4ec56525-2001-448a-973c-3a549e99db83
+		summarizeBy: none
+		sourceColumn: linguagem
+
+		annotation SummarizationSetBy = Automatic
+
+	column win
+		dataType: int64
+		formatString: 0
+		lineageTag: a9231b41-1ae6-4fcf-b7e4-86dfa2ceaba0
+		summarizeBy: sum
+		sourceColumn: win
+
+		annotation SummarizationSetBy = Automatic
+
+	column nomination
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b5a664d-5c4b-42a8-8064-db637d495735
+		summarizeBy: sum
+		sourceColumn: nomination
+
+		annotation SummarizationSetBy = Automatic
+
+	column oscar
+		dataType: int64
+		formatString: 0
+		lineageTag: aa14cf53-7217-4eea-bea3-a5b634a3ccd8
+		summarizeBy: sum
+		sourceColumn: oscar
+
+		annotation SummarizationSetBy = Automatic
+
+	column duracao_minutos
+		dataType: int64
+		formatString: 0
+		lineageTag: f286b9b0-7dc7-4db1-8907-e4cdb2df1ac0
+		summarizeBy: sum
+		sourceColumn: duracao_minutos
+
+		annotation SummarizationSetBy = Automatic
+
+	column classificacao_duracao
+		dataType: string
+		lineageTag: 37ec10a7-5d80-49e6-a4f7-9745c34a00ed
+		summarizeBy: none
+		sourceColumn: classificacao_duracao
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status de Crítica' =
+			
+			IF(
+			    [rating_imdb] >= 80,
+			    "Excelente",
+			    "Comum"
+			)
+		lineageTag: 7f6f192d-a5c2-4a8d-838c-b10a668810c6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition imdb_movies = m
+		mode: import
+		source = ```
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\djmar\Downloads\filmes_nova - world_imdb_movies_top_movies_per_year.csv"),[Delimiter=",", Columns=24, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}, {"Column9", type text}, {"Column10", type text}, {"Column11", type text}, {"Column12", type text}, {"Column13", type text}, {"Column14", type text}, {"Column15", type text}, {"Column16", type text}, {"Column17", type text}, {"Column18", type text}, {"Column19", type text}, {"Column20", type text}, {"Column21", type text}, {"Column22", type text}, {"Column23", type text}, {"Column24", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Column3"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Colunas Removidas",{{"Column4", "Ano"}, {"Column1", "Identidade"}}),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Colunas Renomeadas", [PromoteAllScalars=true]),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"", type text}, {"_1", type text}, {"_2", type text}, {"_3", type text}, {"_4", type text}, {"_5", type text}, {"_6", type text}, {"_7", type text}, {"_8", type text}, {"_9", type text}, {"_10", type text}, {"_11", type text}, {"_12", type text}, {"_13", type text}, {"_14", type text}, {"_15", type text}, {"_16", type text}, {"_17", type text}, {"_18", type text}, {"_19", type text}, {"_20", type text}, {"_21", type text}, {"_22", type text}}),
+				    #"Cabeçalhos Promovidos1" = Table.PromoteHeaders(#"Tipo Alterado1", [PromoteAllScalars=true]),
+				    #"Tipo Alterado2" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos1",{{"", type text}, {"_1", type text}, {"_2", type text}, {"_3", type text}, {"_4", type text}, {"_5", type text}, {"_6", type text}, {"_7", type text}, {"_8", type text}, {"_9", type text}, {"_10", type text}, {"_11", type text}, {"_12", type text}, {"_13", type text}, {"_14", type text}, {"_15", type text}, {"_16", type text}, {"_17", type text}, {"_18", type text}, {"_19", type text}, {"_20", type text}, {"_21", type text}, {"_22", type text}}),
+				    #"Cabeçalhos Promovidos2" = Table.PromoteHeaders(#"Tipo Alterado2", [PromoteAllScalars=true]),
+				    #"Tipo Alterado3" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos2",{{"id", type text}, {"title", type text}, {"year", Int64.Type}, {"duration", type text}, {"rating_mpa", type text}, {"rating_imdb", Int64.Type}, {"vote", Int64.Type}, {"budget", Int64.Type}, {"gross_world_wide", Int64.Type}, {"gross_us_canada", Currency.Type}, {"gross_opening_weekend", Int64.Type}, {"director", type text}, {"writer", type text}, {"star", type text}, {"genre", type text}, {"country_origin", type text}, {"filming_location", type text}, {"production_company", type text}, {"language", type text}, {"captions", type text}, {"win", Int64.Type}, {"nomination", Int64.Type}, {"oscar", Int64.Type}}),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Tipo Alterado3",{{"id", "identidade"}, {"title", "titulo"}, {"year", "ano"}, {"duration", "duração"}}),
+				    #"Colunas Removidas1" = Table.RemoveColumns(#"Colunas Renomeadas1",{"captions"}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Colunas Removidas1", {"identidade"}),
+				    #"Duplicatas Removidas1" = Table.Distinct(#"Duplicatas Removidas", {"titulo"}),
+				    #"Tipo Alterado4" = Table.TransformColumnTypes(#"Duplicatas Removidas1",{{"ano", Int64.Type}, {"gross_world_wide", Currency.Type}, {"gross_us_canada", Currency.Type}, {"gross_opening_weekend", Currency.Type}}),
+				    #"Colunas Renomeadas2" = Table.RenameColumns(#"Tipo Alterado4",{{"language", "linguagem"}, {"genre", "genero"}, {"director", "diretor"}}),
+				    #"Texto em Maiúscula" = Table.TransformColumns(#"Colunas Renomeadas2",{{"titulo", Text.Upper, type text}}),
+				    #"Texto Extraído Antes do Delimitador" = Table.TransformColumns(#"Texto em Maiúscula", {{"genero", each Text.BeforeDelimiter(_, ","), type text}}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Texto Extraído Antes do Delimitador", each [rating_imdb] <> null and [rating_imdb] <> ""),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Linhas Filtradas", "Personalizar", each let
+				    texto = [duração],
+				    horas = if Text.Contains(texto, "h") 
+				        then Number.FromText(Text.BeforeDelimiter(texto, "h")) 
+				        else 0,
+				    minutos = if Text.Contains(texto, "m") 
+				        then Number.FromText(Text.BetweenDelimiters(texto, "h ", "m")) 
+				        else Number.FromText(Text.BeforeDelimiter(texto, "m"))
+				in
+				    horas * 60 + minutos),
+				    #"Colunas Reordenadas" = Table.ReorderColumns(#"Personalização Adicionada",{"identidade", "titulo", "ano", "Personalizar", "duração", "rating_mpa", "rating_imdb", "vote", "budget", "gross_world_wide", "gross_us_canada", "gross_opening_weekend", "diretor", "writer", "star", "genero", "country_origin", "filming_location", "production_company", "linguagem", "win", "nomination", "oscar"}),
+				    #"Colunas Renomeadas3" = Table.RenameColumns(#"Colunas Reordenadas",{{"Personalizar", "duracao_minutos (total)"}}),
+				    #"Colunas Removidas2" = Table.RemoveColumns(#"Colunas Renomeadas3",{"duração"}),
+				    #"Tipo Alterado5" = Table.TransformColumnTypes(#"Colunas Removidas2",{{"duracao_minutos (total)", Int64.Type}}),
+				    #"Valor Substituído" = Table.ReplaceValue(#"Tipo Alterado5","",null,Replacer.ReplaceValue,{"filming_location"}),
+				    #"Personalização Adicionada1" = Table.AddColumn(#"Valor Substituído", "classificacao_duracao", each if [] <= 65 
+				then "curta metragem" 
+				else "longa metragem"),
+				    #"Colunas Removidas3" = Table.RemoveColumns(#"Personalização Adicionada1",{"classificacao_duracao"}),
+				    #"Colunas Renomeadas4" = Table.RenameColumns(#"Colunas Removidas3",{{"duracao_minutos (total)", "duracao_minutos"}}),
+				    #"Personalização Adicionada2" = Table.AddColumn(#"Colunas Renomeadas4", "classificacao_duracao", each if [duracao_minutos] <= 65 
+				then "curta metragem" 
+				else "longa metragem"),
+				    #"Colunas Reordenadas1" = Table.ReorderColumns(#"Personalização Adicionada2",{"identidade", "titulo", "ano", "duracao_minutos", "classificacao_duracao", "rating_mpa", "rating_imdb", "vote", "budget", "gross_world_wide", "gross_us_canada", "gross_opening_weekend", "diretor", "writer", "star", "genero", "country_origin", "filming_location", "production_company", "linguagem", "win", "nomination", "oscar"}),
+				    #"Valor Substituído1" = Table.ReplaceValue(#"Colunas Reordenadas1",null,"DESCONHECIDO",Replacer.ReplaceValue,{"filming_location"}),
+				    #"Colunas Renomeadas5" = Table.RenameColumns(#"Valor Substituído1",{{"identidade", "id"}})
+				in
+				    #"Colunas Renomeadas5"
+				```
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
