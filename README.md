@@ -1,4 +1,4 @@
-🎬 ##Projeto IMDB - Análise de Filmes
+🎬 Projeto IMDB - Análise de Filmes
 📌 Descrição
 
 Este projeto tem como objetivo analisar dados de filmes utilizando Power BI, aplicando técnicas de ETL, modelagem de dados e criação de dashboards interativos.
