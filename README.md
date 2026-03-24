@@ -7,9 +7,13 @@ Este projeto tem como objetivo analisar dados de filmes utilizando Power BI, apl
 
 ❓ Perguntas de Negócio
 Quantos filmes existem no dataset? 31.8 Mil
+
 Qual a média de notas IMDB após o ano 2000? 58,43
+
 A indústria teve lucro ou prejuízo? -316 Bi
+
 Quais gêneros geram mais receita? Action Epic, Action, Animal Adventure
+
 📊 Dashboard
 
 ![Dashboard](<img width="851" height="475" alt="Captura de tela 2026-03-24 174951" src="https://github.com/user-attachments/assets/a6452e4b-8f48-48da-b325-d3a9519a0e57" />
