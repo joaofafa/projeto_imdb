@@ -1,8 +1,10 @@
 🎬 Projeto IMDB - Análise de Filmes
 
 
+
 📌 Descrição
 Este projeto tem como objetivo analisar dados de filmes utilizando Power BI, aplicando técnicas de ETL, modelagem de dados e criação de dashboards interativos.
+
 
 
 ❓ Perguntas de Negócio
@@ -14,6 +16,7 @@ A indústria teve lucro ou prejuízo? -316 Bi
 
 Quais gêneros geram mais receita? Action Epic, Action, Animal Adventure
 
+
 📊 Dashboard
 
 ![Dashboard](<img width="851" height="475" alt="Captura de tela 2026-03-24 174951" src="https://github.com/user-attachments/assets/a6452e4b-8f48-48da-b325-d3a9519a0e57" />
@@ -24,6 +27,7 @@ Quais gêneros geram mais receita? Action Epic, Action, Animal Adventure
 )
 ![Dashboard](<img width="808" height="491" alt="Captura de tela 2026-03-24 175043" src="https://github.com/user-attachments/assets/0cd6f9da-1b63-4035-8e3a-a6587cef310c" />
 )
+
 
 
 ⚙️ Tecnologias utilizadas
