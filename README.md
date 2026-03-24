@@ -1,7 +1,9 @@
 🎬 Projeto IMDB - Análise de Filmes
-📌 Descrição
 
+
+📌 Descrição
 Este projeto tem como objetivo analisar dados de filmes utilizando Power BI, aplicando técnicas de ETL, modelagem de dados e criação de dashboards interativos.
+
 
 ❓ Perguntas de Negócio
 Quantos filmes existem no dataset? 31.8 Mil
@@ -18,8 +20,6 @@ Quais gêneros geram mais receita? Action Epic, Action, Animal Adventure
 )
 ![Dashboard](<img width="808" height="491" alt="Captura de tela 2026-03-24 175043" src="https://github.com/user-attachments/assets/0cd6f9da-1b63-4035-8e3a-a6587cef310c" />
 )
-
-(Link do Power BI Service) 
 
 
 ⚙️ Tecnologias utilizadas
