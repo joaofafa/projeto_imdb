@@ -1,4 +1,4 @@
-🎬 ##Projeto IMDB - Análise de Filmes
+🎬 Projeto IMDB - Análise de Filmes
 
 
 
