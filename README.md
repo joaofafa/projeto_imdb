@@ -1,4 +1,4 @@
-🎬 Projeto IMDB - Análise de Filmes
+🎬 ##Projeto IMDB - Análise de Filmes
 
 
 
@@ -34,6 +34,9 @@ Quais gêneros geram mais receita? Action Epic, Action, Animal Adventure
 
 ⚙️ Tecnologias utilizadas
 Power BI
+
 DAX
+
 Power Query
+
 Git/GitHub
